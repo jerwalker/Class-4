@@ -1,7 +1,12 @@
 $(document).ready(function(){
 
+
+
 var switchStatus = true;
 
+var status = Array("Hey, who turn off the lights?", "It's so bright in here!");
+
+/*
 	$('button').on('click', function(){
 
 		if ( switchStatus ){
@@ -31,4 +36,19 @@ var switchStatus = true;
 		}
 	})
 
-})
+})*/
+
+	$(document).on('click','button', function(){
+
+		switchStatus = !switchStatus;
+
+		$('body').toggleClass('light').toggleClass('dark');
+
+		$('button').toggleClass('on').toggleClass('off');
+
+		$('.status').text(status[Number(switchStatus)]);
+
+
+	});
+
+});
